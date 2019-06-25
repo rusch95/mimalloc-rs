@@ -23,12 +23,12 @@ $ git submodule init
 $ git submodule update
 
 # Build the rust impl library
-$ cd mimalloc-rs/mimalloc-sys/rustimpl
+$ cd mimalloc-rs/mimalloc-sys/rust_impl
 $ cargo build
 
 # Run tests
 $ cd mimalloc-rs
-$ LD_LIBRARY_PATH=mimalloc-sys/rustimpl/target/debug/ cargo test
+$ LD_LIBRARY_PATH=mimalloc-sys/rust_impl/target/debug/ cargo test
 ```
 
 ## License

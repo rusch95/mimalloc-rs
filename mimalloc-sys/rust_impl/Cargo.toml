@@ -1,11 +1,11 @@
 [package]
-name = "rustimpl"
+name = "rust_impl"
 version = "0.1.0"
 authors = ["Robert Rusch <rusch@mit.edu>"]
 edition = "2018"
 
 [lib]
-name = "rustimpl"
+name = "rust_impl"
 crate-type = ["cdylib"]
 
 [dependencies]

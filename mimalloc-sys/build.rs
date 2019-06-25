@@ -18,7 +18,7 @@ fn main() {
     let build_dir = out_dir.join("build");
     let mimalloc_src_dir = src_dir.join("mimalloc");
     let mimalloc_out_src_dir = build_dir.join("mimalloc");
-    let rustimpl_lib_dir = src_dir.join("rustimpl/target/debug");
+    let rust_impl_lib_dir = src_dir.join("rust_impl/target/debug");
 
     info!("TARGET={}", target.clone());
     info!("HOST={}", host.clone());
@@ -29,7 +29,7 @@ fn main() {
     info!("SRC_DIR={:?}", src_dir);
     info!("mimalloc_src_dir={:?}", mimalloc_src_dir);
     info!("mimalloc_out_src_dir={:?}", mimalloc_out_src_dir);
-    info!("rustimpl_lib_dir={:?}", rustimpl_lib_dir);
+    info!("rust_impl_lib_dir={:?}", rust_impl_lib_dir);
 
     // Copy the mimalloc source code to the OUT_DIR:
     //
@@ -54,8 +54,8 @@ fn main() {
     // Build mimalloc
     let dst = cmake::Config::new(mimalloc_out_src_dir)
         .define("OVERRIDE", "OFF")
-        .cflag(format!("-L {}", rustimpl_lib_dir.to_str().unwrap()))
-        .cflag("-lrustimpl")
+        .cflag(format!("-L {}", rust_impl_lib_dir.to_str().unwrap()))
+        .cflag("-lrust_impl")
         .build();
 
     println!("cargo:rustc-link-search=native={}/lib", dst.display());
