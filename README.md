@@ -12,6 +12,7 @@ See also the [`mimalloc-sys`] crate providing raw FFI bindings to [`mimalloc`].
 mimalloc-rs aims to allow for a function-by-function port of mimalloc, https://github.com/microsoft/mimalloc (written in C), to Rust. It does so by dynamically linking the Rust code to mimalloc, so that functions can be replaced one-by-one with a suite of tests run in between. Eventually, once all of the code is ported over to Rust, the FFI and porting infrastructure will be replaced with direct calls to the rust_impl code.
 
 c_impl refers to the forked mimalloc code written in C 
+
 rust_impl refers to the mimalloc code ported over to Rust.
 
 ## Testing
