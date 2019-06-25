@@ -13,8 +13,14 @@ See also the [`mimalloc-sys`] crate providing raw FFI bindings to [`mimalloc`].
 # Populate the submodule fork of mimalloc
 $ git submodule init
 $ git submodule update
+
+# Build the rust impl library
+$ cd mimalloc-rs/mimalloc-sys/rustimpl
+$ cargo build
+
 # Run tests
-$ cargo test
+$ cd mimalloc-rs
+$ LD_LIBRARY_PATH=mimalloc-sys/rustimpl/target/debug/ cargo test
 ```
 
 ## License
