@@ -7,6 +7,16 @@ This crates provides a Rust `#[global_allocator]` backed by [`mimalloc`].
 
 See also the [`mimalloc-sys`] crate providing raw FFI bindings to [`mimalloc`].
 
+## Testing
+
+```
+# Populate the submodule fork of mimalloc
+$ git submodule init
+$ git submodule update
+# Run tests
+$ cargo test
+```
+
 ## License
 
 This project is licensed under either of
