@@ -40,7 +40,6 @@ pub use crate::stats::*;
 pub use crate::alloc_override_osx::*;
 pub use crate::alloc_override_win::*;
 pub use crate::heap::*;
-pub use crate::lib::*;
 pub use crate::os::*;
 pub use crate::page::*;
 pub use crate::static_::*;

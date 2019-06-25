@@ -1,14 +1,16 @@
-/*
-uintptr_t _mi_align_up(uintptr_t sz, size_t alignment) {
-  uintptr_t x = (sz / alignment) * alignment;
-  if (x < sz) x += alignment;
-  if (x < sz) return 0; // overflow
-  return x;
-}
+use libc::*;
 
 #[no_mangle]
-pub extern "C" fn double_input(input: i32) -> i32 {
-    println!("Hello, World!, {}", input);
-    input * 2
+pub extern "C" fn _mi_align_up_rs(sz: uintptr_t, alignment: size_t) -> uintptr_t {
+    let x = (sz / alignment) * alignment;
+    if x < sz { 
+        let (x, overflowed) = x.overflowing_add(alignment); 
+        if overflowed {
+            0
+        } else {
+            x
+        }
+    } else {
+        x
+    }
 }
-*/
