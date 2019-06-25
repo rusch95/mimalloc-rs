@@ -18,6 +18,8 @@ rust_impl refers to the mimalloc code ported over to Rust.
 ## Testing
 
 ```
+# Make sure cmake is installed for building the mimalloc c_impl
+
 # Populate the submodule fork of mimalloc
 $ git submodule init
 $ git submodule update
